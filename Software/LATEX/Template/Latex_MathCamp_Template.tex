@@ -1,0 +1,91 @@
+\documentclass[11pt, oneside]{article}   	% This here defines that this document is an article. Go online and see other types
+\usepackage{geometry}                		% This here (and above) sets the document for letter margins.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+\usepackage{amssymb} 		% This here allows you to introduce math symbols.
+\usepackage{amsmath} 		% This here allows you to introduce math notation.
+\usepackage[]{hyperref} 		% This one is for cross-references.
+
+\title{Title here}
+\author{Your name}
+\date{\today}							
+
+\begin{document}
+
+\maketitle
+
+%%%%% YOUR DOCUMENT STARTS HERE!
+
+
+\section{This is a section with number}
+
+\section*{This is another section, but without number} Note the star at the beginning.
+
+
+\paragraph{You can put an interesting paragraph here}And then, develop this argument.
+
+\section{Lets write some notation}
+
+
+% This below is an equation. This automatically creates a math environment and dollar symbols ARE NOT needed.
+\begin{equation}
+y= \frac{e^{x\beta}}{1 + e^{x\beta }}\label{equation:1}
+\end{equation}
+
+\paragraph{}Note that within the equation environment, you can introduce mathematical symbols. However, if you want to introduce mathematical symbols within this (text) environment, you won't be able to do so, unless you put the \$ symbol at both extremes. For example, you will need to say $\frac{e^{x\beta }}{1+e^{x\beta}}$ in order to produce the same output as above. Finally, as you see here, to write fractions just say $\frac{above}{below}$. If you noticed, everything you write within math mode, goes in italics. If you want to declare that words are text, just say $\frac{\text{above}}{\text{below}}$.
+
+\paragraph{}Now, if you want {\bf bold} or \emph{italics}, just use the proper command. 
+
+\paragraph{}Note that I put a label in \autoref{equation:1}. This generates an hyperlink that allows to number and find equations more easily. Interested students may want to customize different colors for their hyperlinks. 
+
+Another useful thing are subscripts. If you are interested in writing regression notation, just say $\epsilon_{i}$. Within this framework, $\epsilon_{i}$ means the residual for observation $i$. As you know, regression coefficients $\beta$ are constant (the same scalar or number multiplied by all the $i$'s), so {\bf never} write down $\beta_{i}$.
+
+\section{Other Resources}
+
+\paragraph{For matrix algebra}
+
+If you need to do a 2$\times$2 matrix, do the following.
+
+\[p=
+\begin{bmatrix}
+3 & 4\\
+5 & 9\\ 
+\end{bmatrix}
+\]
+
+If you need to do a 4$\times$1 vector, do the following.
+
+\[q=
+\begin{bmatrix}
+3\\
+5\\ 
+4\\
+6\\
+\end{bmatrix}
+\]
+
+
+If you are told to find $u \otimes v$, always remember that $u \otimes v \;=\; u^{v}$.
+
+\paragraph{For limits} 
+
+If you are told to evaluate the next limit, just use the following: $$\lim_{t\to1}\frac{t^{3}-t}{t^{2}-1}$$
+
+
+Notice that powers are just $t^{3}$. Notice that for the limit symbol I put two dollar symbols. That puts the limit below, and centers the equation. If you just say $\lim_{t\to1}\frac{a}{b}$ (one dollar symbol), the limit symbol goes to the right, and it does not get centered.
+
+\paragraph{For integrals} 
+
+Finally, this section will show you how to align equations. Lets take the example of integrals. We use the \texttt{align} environment, and the symbol \& after the equal symbol. Take a look below.
+
+\begin{align}
+\int_{1}^{2} (y^{2}+y^{-2})dx =& (\frac{1}{3}y^{3}-\frac{1}{y})\Big|_{1}^{2}\\ % make sure to put the \\ symbol
+=& (\frac{1}{3}(2)^{3}-\frac{1}{2})-(\frac{1}{3}(1)^{3}-\frac{1}{1})\\
+=& \frac{8}{3}-\frac{1}{2}-\frac{1}{3}+1\\
+=& \frac{17}{6}
+\end{align}
+
+In this example, the antiderivative of $y^{-2}=\frac{y^{-2-1}}{-2-1}=\frac{y^{-1}}{-1}=-y^{-1}=-\frac{1}{y}$.
+
+Remember when you evaluate integrals that you have to consider the upper limit minus the lower limit. 
+
+\end{document}% then you need this in order to end your document.

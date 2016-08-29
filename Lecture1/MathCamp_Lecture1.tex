@@ -1,0 +1,240 @@
+%\documentclass[compress]{beamer}
+\RequirePackage{atbegshi}
+\documentclass[compress]{beamer}
+%	%	%	%	%	%	%	%	%	%	%	%	%	%	%
+% 						MY PACKAGES 
+%	%	%	%	%	%	%	%	%	%	%	%	%	%	%
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps with pdflatex; use eps in DVI mode	
+\usepackage{amssymb}
+\usepackage{amsmath}	
+\usepackage{tipx}
+%\usepackage{tikz}
+%\usetikzlibrary{arrows,shapes,decorations.pathmorphing,backgrounds,positioning,fit,petri}
+\usepackage{rotating}
+\usepackage{times}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{textcomp}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{setspace} 			% \doublespacing \singlespacing \onehalfspacing	%doble espacio
+%\label{x:y}													%ocupar para autoref.
+%\autoref{x:y}												%ocupar para autoref.
+%\usepackage{nopageno}			%desactivar para p�ginas
+\usepackage{pifont}
+\usepackage{graphicx}
+\usepackage{color,xcolor,ucs}
+\usepackage{wasysym}
+\usepackage{fancybox}
+
+
+
+%	%	%	%	%	%	%	%	%	%	%	%	%	%	%
+% 					PACKAGE CUSTOMIZATION
+%	%	%	%	%	%	%	%	%	%	%	%	%	%	%
+
+% GENERAL CUSTOMIZATION
+\usepackage[light,math]{iwona}% font
+\usetheme{Singapore}	% template I should use
+%\usetheme{Szeged}	% alternative template
+\usecolortheme{rose}	% color template
+%\makeatletter			% to show subsection/section title (1/3)
+%\beamer@theme@subsectiontrue % to show subsection/section title (2/3)
+%\makeatother			% to show subsection/section title (3/3)
+
+
+
+% THIS BELOW IS TO MAKE NAVIGATION DOTS MARKED DURING PRESENTATION
+%\makeatletter
+%\def\slideentry#1#2#3#4#5#6{%
+  %section number, subsection number, slide number, first/last frame, page number, part number
+%  \ifnum#6=\c@part\ifnum#2>0\ifnum#3>0%
+%    \ifbeamer@compress%
+%      \advance\beamer@xpos by1\relax%
+%    \else%
+%      \beamer@xpos=#3\relax%
+%      \beamer@ypos=#2\relax%
+%    \fi%
+%  \hbox to 0pt{%
+%    \beamer@tempdim=-\beamer@vboxoffset%
+%    \advance\beamer@tempdim by-\beamer@boxsize%
+%    \multiply\beamer@tempdim by\beamer@ypos%
+%    \advance\beamer@tempdim by -.05cm%
+%    \raise\beamer@tempdim\hbox{%
+%      \beamer@tempdim=\beamer@boxsize%
+%      \multiply\beamer@tempdim by\beamer@xpos%
+%      \advance\beamer@tempdim by -\beamer@boxsize%
+%      \advance\beamer@tempdim by 1pt%
+%      \kern\beamer@tempdim
+%      \global\beamer@section@min@dim\beamer@tempdim
+%      \hbox{\beamer@link(#4){%
+%          \usebeamerfont{mini frame}%
+%          \ifnum\c@section>#1%
+%            %\usebeamercolor[fg]{mini frame}%
+%            %\usebeamertemplate{mini frame}%
+%            \usebeamercolor{mini frame}%
+%            \usebeamertemplate{mini frame in other subsection}%
+%          \else%
+%            \ifnum\c@section=#1%
+%              \ifnum\c@subsection>#2%
+%                \usebeamercolor[fg]{mini frame}%
+%                \usebeamertemplate{mini frame}%
+%              \else%
+%                \ifnum\c@subsection=#2%
+%                  \usebeamercolor[fg]{mini frame}%
+%                  \ifnum\c@subsectionslide<#3%
+%                    \usebeamertemplate{mini frame in current subsection}%
+%                  \else%
+%                    \usebeamertemplate{mini frame}%
+%                  \fi%
+%                \else%
+%                  \usebeamercolor{mini frame}%
+%                  \usebeamertemplate{mini frame in other subsection}%
+%                \fi%
+%              \fi%
+%            \else%
+%              \usebeamercolor{mini frame}%
+%              \usebeamertemplate{mini frame in other subsection}%
+%            \fi%
+%          \fi%
+%        }}}\hskip-10cm plus 1fil%
+%  }\fi\fi%
+%  \else%
+%  \fakeslideentry{#1}{#2}{#3}{#4}{#5}{#6}%
+%  \fi\ignorespaces
+%  }
+%\makeatother
+
+%	%	%	%	%	%	%	%	%	%	%	%	%	%	%
+% 			To show the TITLE at the Bottom of each slide
+%	%	%	%	%	%	%	%	%	%	%	%	%	%	%
+
+%\beamertemplatenavigationsymbolsempty 
+%\makeatletter
+%\setbeamertemplate{footline}
+%{
+%\leavevmode%
+%\hbox{%
+%\begin{beamercolorbox}[wd=1\paperwidth,ht=2.25ex,dp=2ex,center]{title in head/foot}%
+%\usebeamerfont{title in head/foot}\insertshorttitle
+%\end{beamercolorbox}%
+%\begin{beamercolorbox}[wd=1
+%\paperwidth,ht=2.25ex,dp=2ex,center]{date in head/foot}%
+%\end{beamercolorbox}}%
+%}
+%\makeatother
+
+
+
+%\setbeamertemplate{footline}
+%{
+%  \leavevmode%
+%  \hbox{%
+%  \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+%    \usebeamerfont{author in head/foot}\insertshortauthor%~~\beamer@ifempty{\insertshortinstitute}{}{(\insertshortinstitute)}
+%  \end{beamercolorbox}%
+%  \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+%    \usebeamerfont{title in head/foot}\insertshorttitle
+%  \end{beamercolorbox}%
+%  \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,right]{institute in head/foot}%
+%    \usebeamerfont{date in head/foot}\insertinstitute\hspace*{2em}
+%    \hspace*{2ex} 
+%  \end{beamercolorbox}}%
+%    \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,right]{institute in head/foot}%
+%    \usebeamerfont{date in head/foot}\insertshortinstitute\hspace*{2em}
+%    \hspace*{2ex} 
+%  \end{beamercolorbox}}%
+%  \vskip0pt%
+%\makeatother
+
+\beamertemplatenavigationsymbolsempty
+
+
+% This below is to highlight the text with gray.
+%\setbeamercolor{normal text}{fg=gray,bg=}
+%\setbeamercolor{alerted text}{fg=black,bg=}
+%\usebeamercolor{normal text}
+
+% This below is to find pictures in different folders
+\graphicspath{
+{/Users/hectorbahamonde/RU/Teaching/Winter_2015/MathCamp/Resources/}
+}
+
+
+%	%	%	%	%	%	%	%	%	%	%	%	%	%	%
+% 					DOCUMENT ID
+%	%	%	%	%	%	%	%	%	%	%	%	%	%	%
+
+\title{Math Camp 2015}
+\author{H\'ector Bahamonde, PhD Candidate}
+\institute[Political Science]{Rutgers University}
+\date{\today}
+\begin{document}
+
+
+
+%	%	%	%	%	%	%	%	%	%	%	%	%	%	%
+% 					CONTENT
+%	%	%	%	%	%	%	%	%	%	%	%	%	%	%
+
+%% title frame
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}\frametitle{Logistics}
+\begin{itemize}
+\item Substantive: matrix algebra and basic calculus\pause
+\item Computational: \texttt{STATA}, \texttt{R}, \texttt{SPSS} and \LaTeX.\pause
+\item Text: Kropoko's notes.\pause
+\item Two sessions per day. I lecture in the first and in the second you solve problems in the board.\pause
+\item Problem set: at the end of each day, due the next morning. Pen and pencil, but some answers are required in \LaTeX
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Introduction}
+\begin{itemize}
+\item Name
+\item Why are you taking this course?
+\item What's your experience with previous methods courses?
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}\frametitle{Ultimate Goal: OLS}
+\begin{figure}[H]
+\centering\includegraphics[scale=.6]{plot1.pdf}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}\frametitle{Ultimate Goal: OLS}
+\begin{itemize}
+\item {\bf Ordinary Least Squares}: a technique to examine the relationship between a variable $Y$ and one or more quantitative explanatory variables $X_{1}$,$X_{2}$...$X_{n}$.\pause
+\item I just estimated a bivariate relationship, i.e. one $Y$ and one $X$
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Re-expression of our bivariate relationship: Regression Notation}
+\begin{itemize}
+\item $Y\text{GROWTH}_{i} = \beta_{0} + \beta_{1}\text{DEMOCRACY}_{i} + \epsilon_{i}$\pause
+\item {\color{red}More complex model}: \\
+$Y\text{GROWTH}_{i} = \beta_{0} + \beta_{1}\text{DEMOCRACY} + \beta_{2}\text{?} + \beta_{3}\text{?} + \beta_{4}\text{?} 
++ \beta_{5}\text{?} + \beta_{6}\text{?}  + \epsilon_{i}$\\
+{\color{red}What other covariates you think might explain GROWTH?}\\\pause
+\item {\color{red}After so many covariates}: it becomes annoying, right? We need a language to re-write the same thing but more simple
+\item That language is called {\bf matrix alegebra}
+\end{itemize}
+\end{frame}
+%explain notation: capital for MATRIX containing data, betas are regression coefficients, indexes by i, 
+
+\begin{frame}\frametitle{Re-expression of our bivariate relationship: Matrix Notation}
+\centering $Y=X\beta + \epsilon$
+\end{frame}
+
+
+\end{document}
+
+

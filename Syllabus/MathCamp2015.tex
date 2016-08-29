@@ -1,0 +1,300 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pt]{article}
+\usepackage{lipsum} % Package to generate dummy text throughout this template
+
+\usepackage[light, math]{iwona}
+%\usepackage[sc]{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\linespread{1.05} % Line spacing - Palatino needs more space between lines
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+
+\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry} % Document margins
+\usepackage{multicol} % Used for the two-column layout of the document
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{float} % Required for tables and figures in the multi-column environment - they need to be placed in specific locations with the [H] (e.g. \begin{table}[H])
+
+\usepackage{lettrine} % The lettrine is the first enlarged letter at the beginning of the text
+\usepackage{paralist} % Used for the compactitem environment which makes bullet points with less space between them
+
+\usepackage{abstract} % Allows abstract customization
+\renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Abstract" text to bold
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
+
+\usepackage{titlesec} % Allows customization of titles
+\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
+\renewcommand\thesubsection{\Roman{subsection}} % Roman numerals for subsections
+\titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
+\titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{} % Change the look of the section titles
+
+\usepackage{fancybox, fancyvrb, calc}
+\usepackage[svgnames]{xcolor}
+
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT ID (Department, Professor, Course, etc.) 
+%----------------------------------------------------------------------------------------
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[C]{Rutgers Math Camp $\bullet$ Syllabus $\bullet$ W:2015} % Custom header text
+\fancyfoot[RO,LE]{\thepage} % Custom footer text
+
+%----------------------------------------------------------------------------------------
+%	MY PACKAGES 
+%----------------------------------------------------------------------------------------
+
+\usepackage{amsmath}	
+%\usepackage{rotating}
+\usepackage{textcomp}
+\usepackage{caption}
+\usepackage{etex}
+%\usepackage[export]{adjustbox}
+%\usepackage{afterpage}
+%\usepackage{filecontents}
+\usepackage{color}
+\usepackage{latexsym}
+\usepackage{lscape}				%\begin{landscape} and \end{landscape}
+\usepackage{amsfonts}
+%\usepackage{mathabx}
+\usepackage{amssymb}
+%\usepackage{dashrule}
+%\usepackage{txfonts}
+%\usepackage{pgfkeys}
+%\usepackage{framed}
+\usepackage{tree-dvips}
+\usepackage{caption}
+%\usepackage{fancyvrb}
+%\usepackage{pgffor}
+\usepackage{xcolor}
+%\usepackage{pxfonts}
+\usepackage{wasysym}
+\usepackage{authblk}
+%\usepackage{paracol}
+\usepackage{setspace}
+%\usepackage{qtree}
+%\usepackage{tree-dvips}
+\usepackage{sgame}				% shouldn't have neither array nor tabularx packages
+\usepackage{tikz}
+%\usetikzlibrary{trees}
+\usepackage[latin1]{inputenc}
+%\label{tab:1} 		%\autoref{tab:1}	%ocupar para citar.
+% \hyperlik{table1}	\hypertarget{table1} 
+% \textquoteright			%apostrofe
+\usepackage{hyperref} 		%desactivar para link rojos
+\usepackage{natbib}
+%\usepackage{proof} 			%for proofs
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	Other ADDS-ON
+%----------------------------------------------------------------------------------------
+
+% independence symbol \independent
+\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+
+
+% VERBATIM WITH BACKGROUND COLOR
+\newenvironment{colframe}{%
+  \begin{Sbox}
+    \begin{minipage}
+      {\columnwidth%-\leftmargin-\rightmargin-6pt
+      }
+    }{%
+    \end{minipage}
+  \end{Sbox}
+  \begin{center}
+    \colorbox{LightSteelBlue}{\TheSbox}
+  \end{center}
+}
+
+
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    unicode=false,          % non-Latin characters in Acrobat$'$s bookmarks
+    pdftoolbar=true,        % show Acrobat$'$s toolbar?
+    pdfmenubar=true,        % show Acrobat$'$s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={My title},    % title
+    pdfauthor={Author},     % author
+    pdfsubject={Subject},   % subject of the document
+    pdfcreator={Creator},   % creator of the document
+    pdfproducer={Producer}, % producer of the document
+    pdfkeywords={keyword1} {key2} {key3}, % list of keywords
+    pdfnewwindow=true,      % links in new window
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=ForestGreen,          % color of internal links (change box color with linkbordercolor)
+    citecolor=ForestGreen,        % color of links to bibliography
+    filecolor=ForestGreen,      % color of file links
+    urlcolor=ForestGreen           % color of external links
+}
+
+
+% PROPOSITIONS
+\newtheorem{proposition}{Proposition}
+
+%\linespread{1.5}
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+%\title{\vspace{-15mm}\fontsize{18pt}{7pt}\selectfont\textbf{Experimental Economists and Psychologists: Two Worlds Apart}} % Article title
+
+%\author[1]{
+%\large
+%\textsc{H\'ector Bahamonde}\\ 
+%\thanks{}
+%\normalsize Political Science Dpt. $\bullet$ Rutgers University \\ % Your institution
+%\normalsize \texttt{e:}\href{mailto:hector.bahamonde@rutgers.edu}{\texttt{hector.bahamonde@rutgers.edu}}\\
+%\normalsize \texttt{w:}\href{http://www.hectorbahamonde.com}{\texttt{www.hectorbahamonde.com}}
+%\vspace{-5mm}
+%}
+%\date{\today}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%\maketitle % Insert title
+
+
+\thispagestyle{fancy} % All pages have headers and footers
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+%\begin{abstract}
+%	ABSTRACT
+%\end{abstract}
+
+
+%----------------------------------------------------------------------------------------
+%	CONTENT
+%----------------------------------------------------------------------------------------
+
+%\graphicspath{
+%{/Users/hectorbahamonde/RU/Term5/Experiments_Redlawsk/Experiment/Data/}
+%}
+\hspace{-6mm}{\bf Instructor}: H\'ector Bahamonde\\
+\texttt{e:}\href{mailto:hector.bahamonde@rutgers.edu}{\texttt{hector.bahamonde@rutgers.edu}}\\
+\texttt{w:}\href{http://www.hectorbahamonde.com}{\texttt{www.hectorbahamonde.com}}\\
+{\bf Location}: Hickman Hall 313\\
+{\bf Office Hours}: 5:00-6:00, Hickman Hall 602
+
+\subsection*{Overview and Objectives}
+
+\paragraph{Substantive} The primary purpose of math camp is to provide students with a set of skills that will be needed to perform well in the quantitative methods courses offered at Rutgers and elsewhere. It will cover the foundational material of matrix algebra, basic calculus and basic probability.
+
+\paragraph{Computational} The secondary purpose of math camp is to provide students with computational skills that will be needed to perform well in the quantitative methods courses offered at Rutgers and elsewhere. We will learn the basics of \texttt{SPSS}, \href{http://gofile.me/2nH49/7vEyXRHW}{\texttt{STATA}}, \href{http://dirichlet.mat.puc.cl}{\texttt{R}} and \LaTeX \; (\href{http://ctan.math.utah.edu/ctan/tex-archive/systems/windows/protext/ProTeXt-3.1.4-020114.exe}{\texttt{w}} or \href{http://mirror.ctan.org/systems/mac/mactex/MacTeX.pkg}{\texttt{m}}). {\bf If you have a laptop, please bring it to the workshop and have everything installed before the workshop starts} (click on the green links). In any case, the grad computer lab provides access to all these softwares. {\bf Note}: Once you have installed the ``core'' of both \texttt{R} and \LaTeX \;in your computer, you will need \href{http://www.rstudio.com/products/rstudio/download/}{\texttt{RStudio}} to ``speak'' with \texttt{R} and \href{http://www.tug.org/texworks/#Getting_TeXworks}{\texttt{TeXworks}} to ``speak'' with \LaTeX. Then, you need to download a standard \texttt{R} \href{http://gofile.me/2nH49/JwZmDn7T}{\texttt{template}} and a standard \LaTeX \; \href{http://gofile.me/2nH49/5XGG4YEW}{\texttt{template}} (the \LaTeX \; template contains everything you need for the problem sets). Interested students might want to go on-line and look for fancier \href{https://www.writelatex.com/templates}{\texttt{templates}}, or more mathematical \href{http://www.maths.tcd.ie/~dwilkins/LaTeXPrimer/}{\texttt{symbols}}.
+
+
+\subsection*{Required Text}
+The main source will be Kropko's \href{http://gofile.me/2nH49/xw2IaabL}{\emph{Math for Political Science}}. Interested students may also consult:
+\begin{itemize}
+\item Jeff Gill. \emph{Essential Mathematics for Political and Social Research}. 2006, Cambridge University Press.
+\item Moore and Siegel. A Mathematics Course for Political and Social Research. 2013, Princeton University Press.
+\end{itemize}
+
+
+\subsection*{Organization}
+		\begin{itemize}
+			\item Sessions will be run workshop-style where the instructor will demonstrate a concept, which will be followed by a series of in-class practice exercises. %In addition, there will be short problem-sets issued daily.
+			\item Starting from January, 6th., students are required to hand in problem sets. There are 4 problem sets. You may hand in your answers in pencil and paper, but there are some answers that have to be delivered in printed format using \LaTeX \; (emailed answers are fine too). You can print in the 4th grad lab. Finally, every morning, starting from January, 6th., students are assigned to solve one of the problem set's exercises in the board.
+			\item Some links, like for ex., problem sets' links, will be activated the day we will need them, not before. Do not worry if you can't open them. Some links are password protected. I will provide the password on January, 5th.
+		\end{itemize}
+
+
+\subsection*{Schedule}
+\begin{enumerate}
+\item {\bf January, 5th}
+		\begin{itemize}
+			\item Session 1 (10:30-12:30)
+				\begin{itemize}
+				\item Introduction, logistics and course outline.
+				\item Motivation: what's our ultimate goal?
+				\item Linear algebra (1): ch. 9-10 Kropko.
+				\end{itemize}
+			\item Session 2 (2:00-4:00)
+				\begin{itemize}
+				\item No readings. In-class collective exercises.
+				\item Instructor gives \href{http://gofile.me/2nH49/lGi5bvDy}{PS \# 1}.
+				\end{itemize}
+		\end{itemize}
+\item  {\bf January, 6th}
+		\begin{itemize}
+			\item Session 1 (10:30-12:30)
+				\begin{itemize}
+				\item {\bf PS \# 1 due}. Students are assigned to solve one exercise in the board.
+				\item Linear algebra (2): selected sections of ch. 11, 12, 13, Kropko.
+				\end{itemize}
+			\item Session 2 (2:00-4:00)
+				\begin{itemize}
+				\item No readings. In-class collective exercises.
+				\item Instructor gives \href{http://gofile.me/2nH49/vDBMX2fU}{PS \# 2}.
+				\end{itemize}
+		\end{itemize}
+\item {\bf January, 7th}
+		\begin{itemize}
+			\item Session 1 (10:30-12:30)
+				\begin{itemize}
+				\item {\bf PS \# 2 due}. Students are assigned to solve one exercise in the board.
+				\item Calculus (1): Ch. 4-5, Kropko.
+				\end{itemize}
+			\item Session 2 (2:00-4:00)
+				\begin{itemize}
+				\item No readings. In-class collective exercises.
+				\item Instructor gives \href{http://gofile.me/2nH49/SkteA09p}{PS \# 3}.
+				\end{itemize}
+		\end{itemize}
+\item {\bf January, 8th}
+		\begin{itemize}
+			\item Session 1 (10:30-12:30)
+				\begin{itemize}
+				\item {\bf PS \# 3 due}. Students are assigned to solve one exercise in the board.
+				\item Calculus (2): selected sections of ch. 6-7-8, Kropko.
+				\end{itemize}
+			\item Session 2 (2:00-4:00)
+				\begin{itemize}
+				\item No readings. In-class collective exercises.
+				\item Instructor gives \href{http://gofile.me/2nH49/3Ed5Wn7g}{PS \# 4}.
+				\end{itemize}
+		\end{itemize}
+\item {\bf January, 9th}
+		\begin{itemize}
+			\item Session 1 (10:30-11:00)
+				\begin{itemize}
+				\item {\bf PS \# 4 due}. Students are assigned to solve one exercise in the board.
+				\end{itemize}
+			\item Workshop (11:00-4:00)
+				\begin{itemize}
+				\item Computing workshop {\bf 1}. Open your \LaTeX \; template and start working on the \texttt{R} \href{http://gofile.me/2nH49/MDgf2bcN}{exercise}. Once you're done with \texttt{R}, don't close \LaTeX \; and continue working with the \texttt{STATA} exercise. \href{http://gofile.me/2nH49/xBD2Pfl5}{Download} the data and the \texttt{DO} file. Finally, familiarize yourself with \texttt{SPSS} by clicking \href{http://www.ats.ucla.edu/stat/spss/output/descriptives.htm}{here} and \href{http://www.ats.ucla.edu/stat/spss/output/reg_spss_long.htm}{here}.
+				\item Computing workshop {\bf 2}. Choose a software, and evaluate this \href{http://gofile.me/2nH49/gfMiTUvm}{dataset} running the next four regressions. As if you were writing a paper, show everything you think is important in a \LaTeX\; document. What can we learn from this exercise?
+					\begin{enumerate}
+					\item regress y1 on x1
+					\item regress y2 on x2
+					\item regress y3 on x3
+					\item regress y4 on x4
+					\end{enumerate}
+				\item Computing workshop {\bf 3}. \href{http://gofile.me/2nH49/BzJ4OrCd}{Download} the \texttt{beamer} template, and make a small presentation (two-three slides) where you present one model and one table from the models you just run.
+				\end{itemize}
+		\end{itemize}
+\end{enumerate}
+
+
+
+%\bibliographystyle{plainnat}
+%\bibliography{/Users/hectorbahamonde/RU/Bibliografia_PoliSci/Bahamonde_BibTex2013}
+
+\end{document}
